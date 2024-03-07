@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+  background-image: url('./resources/mainbg.png');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+}
+
+.eventheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card {
+  margin: auto;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.App.card1-hovered .card:nth-child(1) {
+  background-image: url('./resources/card2.jpg');
+}
+
+.App.card2-hovered .card:nth-child(2) {
+  background-image: url('./resources/card2.jpg');
+}
+
+.App.card3-hovered .card:nth-child(3) {
+  background-image: url('./resources/card2.jpg');
+}
+
+
+body {
+  background-image: url('./resources/mainbg.png');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+}
+
+.card {
+  margin: auto;
+}
+
+
+.eventheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

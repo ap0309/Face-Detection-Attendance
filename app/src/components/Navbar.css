@@ -1,0 +1,38 @@
+.navbar,
+h5 {
+    font: toroka !important;
+    color: white !important;
+    padding-right: 20px;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+nav,
+.navbar {
+    border-radius: 50rem;
+    padding-left: 30px;
+    background: linear-gradient(to right, #23146b, #63035b);
+
+    opacity: 0.7;
+    border: 2px solid rgb(72, 49, 109);
+
+}
+
+nav,
+.navbar-brand {
+    font-size: large;
+
+
+}
+
+.container {
+    padding-top: 30px;
+    justify-content: space-between;
+    /* font-family: 'Exo 2', sans-serif; */
+}
+
+.navbar,
+.navbar a {
+    color: white !important;
+}
