@@ -14,10 +14,6 @@
   text-align: center;
 }
 
-.card {
-  margin: auto;
-}
-
 .card:hover {
   cursor: pointer;
 }
@@ -43,8 +39,17 @@ body {
   color: white;
 }
 
-.card {
-  margin: auto;
+.eventheader .col {
+  display: flex;
+  justify-content: center;
+}
+
+.eventheader .col:first-child {
+  margin-left: 0;
+}
+
+.eventheader .col:not(:first-child) {
+  margin-left: auto;
 }
 
 
