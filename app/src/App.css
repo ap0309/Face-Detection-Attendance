@@ -23,15 +23,15 @@
 }
 
 .App.card1-hovered .card:nth-child(1) {
-  background-image: url('./resources/card2.jpg');
+  background-image: url('./resources/cardtoogle.jpg');
 }
 
 .App.card2-hovered .card:nth-child(2) {
-  background-image: url('./resources/card2.jpg');
+  background-image: url('./resources/cardtoogle.jpg');
 }
 
 .App.card3-hovered .card:nth-child(3) {
-  background-image: url('./resources/card2.jpg');
+  background-image: url('./resources/cardtoogle.jpg');
 }
 
 

@@ -1,38 +1,57 @@
-.navbar,
-h5 {
-    font: toroka !important;
-    color: white !important;
-    padding-right: 20px;
-    align-items: center;
-    text-align: center;
-    margin: auto;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+@font-face {
+    font-family: 'TT Interphases';
+    src: url('../resources/TT Interphases Pro Trial Bold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
-nav,
+.navbar a {
+    color: white;
+    transition: color 0.3s;
+
+}
+.navbar a:hover {
+    color: rgb(0, 221, 255);
+}
+
 .navbar {
-    border-radius: 50rem;
-    padding-left: 30px;
-    background: linear-gradient(to right, #23146b, #63035b);
-
-    opacity: 0.7;
-    border: 2px solid rgb(72, 49, 109);
-
+    border-radius: 25px;
+    padding: 5px 20px;
+    background: linear-gradient(to right, #23146b, #130433);
+    opacity: 1;
+    border: 1px solid rgb(72, 49, 109);
 }
 
-nav,
-.navbar-brand {
-    font-size: large;
+.nav-item {
+    font-size: 1 em;
+}
 
+h5 {
+    font-family: 'TT Interphases', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+    margin-right: 20px;
+}
 
+.navbar-logo {
+    max-height: 50px;
+    margin-right: 20px;
 }
 
 .container {
     padding-top: 30px;
     justify-content: space-between;
-    /* font-family: 'Exo 2', sans-serif; */
+    font-family: 'Exo 2', sans-serif;
 }
 
-.navbar,
 .navbar a {
-    color: white !important;
+    color: white;
+}
+
+.navbar-toggler {
+    color: white;
 }
