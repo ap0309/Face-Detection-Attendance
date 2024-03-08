@@ -28,10 +28,10 @@
 .card-title {
     font-size: 1.25rem;
     font-weight: bold;
+    margin-left: 17px;
 }
 
 .card-text {
-    /* text-align: left; */
     margin-bottom: 10px;
 }
 
@@ -47,5 +47,5 @@
 }
 
 .btn-primary:hover {
-    background-color: #8d02ac;
+    background-color: #036b4ff0;
 }

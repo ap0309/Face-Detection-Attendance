@@ -23,14 +23,14 @@ function App() {
         <div className="col text-center mb-3 mb-md-0">
           <Card
             src={markp}
-            title="Mark Attendance Here"
+            title="Mark Attendance"
             btnctn="Click Here" />
         </div>
 
         <div className="col text-center">
           <Card
             src={db}
-            title="Access Database" b
+            title="Access Live  Database" b
             btnctn="Click Here" />
         </div>
 
