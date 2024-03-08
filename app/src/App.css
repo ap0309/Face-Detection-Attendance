@@ -18,15 +18,15 @@
   cursor: pointer;
 }
 
-.App.card1-hovered .card:nth-child(1) {
+.App.card1-hovered .eventheader .col:nth-child(1) .card {
   background-image: url('./resources/cardtoogle.jpg');
 }
 
-.App.card2-hovered .card:nth-child(2) {
+.App.card2-hovered .eventheader .col:nth-child(2) .card {
   background-image: url('./resources/cardtoogle.jpg');
 }
 
-.App.card3-hovered .card:nth-child(3) {
+.App.card3-hovered .eventheader .col:nth-child(3) .card {
   background-image: url('./resources/cardtoogle.jpg');
 }
 
