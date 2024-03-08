@@ -1,11 +1,21 @@
 .App {
   text-align: center;
-  /* background-image: url('./resources/mainbg.png'); */
-  background-color: black;
+  background-image: url('./resources/mainbg.png');
+  /* background-color: black; */
   background-size: cover;
   background-position: center;
   font-family: 'Exo 2', sans-serif;
   color: white;
+}
+
+body {
+  background-image: url('./resources/mainbg.png');
+  /* background-color: black; */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+  overflow: hidden;
 }
 
 .eventheader {
@@ -20,18 +30,6 @@
   background-image: url('./resources/cardtoogle.jpg');
 }
 
-
-body {
-  background-image: url('./resources/mainbg.png');
-  /* background-color: black; */
-  background-size: cover;
-  background-position: center;
-  font-family: 'Exo 2', sans-serif;
-  color: white;
-  overflow-x: hidden;
-}
-
-
 .eventheader .col {
   display: flex;
   justify-content: center;
@@ -45,10 +43,9 @@ body {
   margin-left: auto;
 }
 
-
-.eventheader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+@media only screen and (max-width: 600px) {
+  body {
+    overflow: visible;
+    overflow-x: hidden;
+  }
 }
