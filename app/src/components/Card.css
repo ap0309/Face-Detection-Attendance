@@ -2,7 +2,7 @@
     width: 18rem;
     border: 1px solid #fff;
     border-radius: 20px;
-    border-color: rgb(1, 69, 128);
+    border-color: rgb(73, 62, 74);
     background-color: rgba(94, 94, 99, 0.228);
     color: #fff;
     overflow: hidden;
@@ -40,12 +40,13 @@
     color: #fff;
     border: none;
     padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #036b4ff0;
+    color: #eff0f1;
+    background-color: #0c4691
 }

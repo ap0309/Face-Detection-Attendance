@@ -7,11 +7,24 @@ export default function Navbar(props) {
     return (
         <>
             <div className="container">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
-                    <img src={logo} alt="Logo" className="navbar-logo" />
 
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+
+                    <div className="d-flex align-items-center">
+                        <img src={logo} alt="Logo" className="navbar-logo" />
+                    </div>
+
+                    <h5 id="titlem"> AP & AP Corporation</h5>
+
+                    <button
+                        className="navbar-toggler ml-auto btn-light"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
@@ -27,8 +40,11 @@ export default function Navbar(props) {
                                 <a className="nav-link" href="main.html">Contact Us</a>
                             </li>
                         </ul>
+
+                        <h5 id="title"> AP & AP Corporation</h5>
+
                     </div>
-                    <h5 id="title"> AP & AP Corporation</h5>
+
                 </nav>
             </div>
             <br /><br />

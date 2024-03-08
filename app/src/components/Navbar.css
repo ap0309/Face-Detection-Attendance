@@ -7,34 +7,31 @@
     font-style: normal;
 }
 
-.navbar a {
-    color: white;
-    transition: color 0.3s;
-
-}
-
-.navbar a:hover {
-    color: rgb(0, 221, 255);
-}
-
-#title {
-    display: flex;
-    font-size: 1.3em;
-    margin: auto;
-}
 
 .navbar {
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 5px 20px;
     /* background: linear-gradient(to right, #23146b, #63035b); */
     background: linear-gradient(to right, #23146b, #130433);
     /* background: linear-gradient(to right, #525151, #262626); */
     opacity: 1;
     border: 1px solid rgb(72, 49, 109);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nav-item {
-    font-size: 1 em;
+#title {
+    display: none;
+    font-size: 1.3em;
+    margin: auto;
+}
+
+#titlem {
+    font-size: 1.3em;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h5 {
@@ -46,9 +43,24 @@ h5 {
     margin-right: 20px;
 }
 
+
 .navbar-logo {
     max-height: 50px;
-    margin-right: 20px;
+    margin-right: auto;
+}
+
+.navbar-logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.navbar a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: rgb(0, 221, 255);
 }
 
 .container {
@@ -57,10 +69,46 @@ h5 {
     font-family: 'Exo 2', sans-serif;
 }
 
-.navbar a {
-    color: white;
+@media (min-width: 900px) {
+    .navbar-logo {
+        max-height: 50px;
+        margin-right: 20px;
+    }
+
+    #titlem {
+        display: none;
+    }
+
+    #title {
+        margin: auto;
+        display: flex;
+        margin-right: 20px;
+        font-weight: bolder;
+    }
 }
 
-.navbar-toggler {
-    color: white;
+@media (max-width: 400px) {
+    .navbar-toggler {
+        border: none;
+        outline: none;
+        padding: 0;
+        width: 25px;
+        margin-right: auto;
+        color: #ebe9f5eb;
+        background-color: white;
+        align-self: center;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar-toggler-icon {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 2px;
+        align-self: center;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+
 }
