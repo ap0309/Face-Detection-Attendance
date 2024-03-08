@@ -1,7 +1,6 @@
 import React from 'react';
 import './Navbar.css';
 
-// Import your logo image
 import logo from '../resources/logo.png';
 
 export default function Navbar(props) {
@@ -10,7 +9,7 @@ export default function Navbar(props) {
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
                     <img src={logo} alt="Logo" className="navbar-logo" />
-                    {/* <h5>AP & AP Corporation</h5> */}
+
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -29,6 +28,7 @@ export default function Navbar(props) {
                             </li>
                         </ul>
                     </div>
+                    <h5 id="title"> AP & AP Corporation</h5>
                 </nav>
             </div>
             <br /><br />

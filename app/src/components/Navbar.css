@@ -12,14 +12,23 @@
     transition: color 0.3s;
 
 }
+
 .navbar a:hover {
     color: rgb(0, 221, 255);
+}
+
+#title {
+    display: flex;
+    font-size: 1.3em;
+    margin: auto;
 }
 
 .navbar {
     border-radius: 25px;
     padding: 5px 20px;
+    /* background: linear-gradient(to right, #23146b, #63035b); */
     background: linear-gradient(to right, #23146b, #130433);
+    /* background: linear-gradient(to right, #525151, #262626); */
     opacity: 1;
     border: 1px solid rgb(72, 49, 109);
 }

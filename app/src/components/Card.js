@@ -2,18 +2,9 @@ import React from 'react';
 import './Card.css';
 
 export default function CustomCard(props) {
-    const handleHover = () => {
-        props.onMouseOver();
-    };
-
-    const handleMouseOut = () => {
-        props.onMouseOut();
-    };
-
-
     return (
-        <>
-            <div className="card" onMouseOver={handleHover} onMouseOut={handleMouseOut}>
+        <div className="col text-center mb-3 mb-md-0">
+            <div className="card">
                 <img src={props.src} className="card-img-top" alt="Card" />
                 <div className="card-body">
                     <h5 className="card-title">{props.title}</h5>
@@ -21,6 +12,6 @@ export default function CustomCard(props) {
                     <a href="/" className="btn btn-primary">{props.btnctn}</a>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-image: url('./resources/mainbg.png');
+  /* background-image: url('./resources/mainbg.png'); */
+  background-color: black;
   background-size: cover;
   background-position: center;
   font-family: 'Exo 2', sans-serif;
@@ -16,28 +17,20 @@
 
 .card:hover {
   cursor: pointer;
-}
-
-.App.card1-hovered .eventheader .col:nth-child(1) .card {
-  background-image: url('./resources/cardtoogle.jpg');
-}
-
-.App.card2-hovered .eventheader .col:nth-child(2) .card {
-  background-image: url('./resources/cardtoogle.jpg');
-}
-
-.App.card3-hovered .eventheader .col:nth-child(3) .card {
   background-image: url('./resources/cardtoogle.jpg');
 }
 
 
 body {
   background-image: url('./resources/mainbg.png');
+  /* background-color: black; */
   background-size: cover;
   background-position: center;
   font-family: 'Exo 2', sans-serif;
   color: white;
+  overflow-x: hidden;
 }
+
 
 .eventheader .col {
   display: flex;
