@@ -29,7 +29,7 @@ function App() {
           <Card src={markp} title="Mark Attendance" btnctn="Click Here" onClick={handleMarkAttendanceClick} />
         </div>
         <div className="col text-center">
-          <Card src={db} title="Access Live  Database" btnctn="Click Here" />
+          <Card src={db} title="Access Database" btnctn="Click Here" />
         </div>
       </div>
       {showWebcam && <WebcamComponent onClose={handleCloseWebcam} />}

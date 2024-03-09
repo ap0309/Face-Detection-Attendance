@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   /* background-image: url('./resources/mainbg.png'); */
-  background-color: black;
+  background-image: url('./resources/mainbg2.png');
+  /* background-color: black; */
   background-size: cover;
   background-position: center;
   font-family: 'Exo 2', sans-serif;
@@ -9,8 +10,9 @@
 }
 
 body {
-  background-image: url('./resources/mainbg.png');
-  /* background-color: black; */
+  /* background-image: url('./resources/mainbg.png'); */
+  background-image: url('./resources/mainbg2.png');
+  background-color: black;
   background-size: cover;
   background-position: center;
   font-family: 'Exo 2', sans-serif;
@@ -28,6 +30,14 @@ body {
 .card:hover {
   cursor: pointer;
   background-image: url('./resources/cardtoogle.jpg');
+  /* background-image: url('./resources/cardtoogle1.jpg'); */
+
+}
+
+.card {
+  background-image: url('./resources/cardtoogle.jpg');
+  background-image: url('./resources/cardtoogle1.jpg');
+
 }
 
 .eventheader .col {

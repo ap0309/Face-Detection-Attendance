@@ -1,19 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-
-@font-face {
-    font-family: 'TT Interphases';
-    src: url('../resources/TT Interphases Pro Trial Bold.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .navbar {
+    font-family: 'Poppins', sans-serif;
     border-radius: 15px;
     padding: 5px 20px;
     /* background: linear-gradient(to right, #23146b, #63035b); */
-    background: linear-gradient(to right, #23146b, #130433);
+    /* background: linear-gradient(to right, #23146b, #130433); */
     /* background: linear-gradient(to right, #525151, #262626); */
+    background: linear-gradient(to right, #525151, #000);
+    background: linear-gradient(to right, #3d3d3d, #000);
+
     opacity: 1;
     border: 1px solid rgb(72, 49, 109);
     display: flex;
@@ -35,21 +31,16 @@
 }
 
 h5 {
-    font-family: 'TT Interphases', sans-serif;
-    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     font-size: 1.2rem;
     color: white;
     margin: 0;
     margin-right: 20px;
 }
 
-
 .navbar-logo {
     max-height: 50px;
-    margin-right: auto;
-}
-
-.navbar-logo {
     width: 50px;
     margin-right: 10px;
 }
@@ -66,7 +57,7 @@ h5 {
 .container {
     padding-top: 30px;
     justify-content: space-between;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 991px) {
@@ -109,6 +100,4 @@ h5 {
         justify-content: flex-end;
         align-items: center;
     }
-
-
 }
