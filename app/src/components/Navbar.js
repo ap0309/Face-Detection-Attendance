@@ -41,7 +41,13 @@ export default function Navbar(props) {
                             </li>
                         </ul>
 
-                        <h5 id="title"> AP & AP Corporation</h5>
+                        <h5 id="title">
+                             <div className="ap1">AP&nbsp;</div> 
+                             <div className="and"> &&nbsp; </div> 
+                             <div className="ap2">AP&nbsp;</div>
+                             <div className="corporation">Corporation</div>
+
+                        </h5>
 
                     </div>
 

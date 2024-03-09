@@ -9,9 +9,11 @@
     /* background: linear-gradient(to right, #525151, #262626); */
     background: linear-gradient(to right, #525151, #000);
     background: linear-gradient(to right, #3d3d3d, #000);
+    background: linear-gradient(to right, #707070, #000);
+
 
     opacity: 1;
-    border: 1px solid rgb(72, 49, 109);
+    border: 1px solid rgb(53, 52, 54);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,6 +30,26 @@
     margin: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+.and {
+    /* color: rgb(65, 147, 120); */
+    color: #4F428D;
+    color: rgb(65, 147, 120);
+    color: #c1bfbf;
+}
+
+.ap1 {
+    /* color: #4F428D; */
+}
+
+.corporation {
+    color: rgb(65, 147, 120);
+    color: #6d5acb
+}
+
+.ap2 {
+    /* color: rgb(65, 147, 120); */
 }
 
 h5 {
@@ -51,7 +73,7 @@ h5 {
 }
 
 .navbar a:hover {
-    color: rgb(0, 221, 255);
+    color: rgb(65, 147, 120);
 }
 
 .container {
