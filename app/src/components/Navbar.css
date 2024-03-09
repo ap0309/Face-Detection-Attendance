@@ -69,7 +69,7 @@ h5 {
     font-family: 'Exo 2', sans-serif;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 991px) {
     .navbar-logo {
         max-height: 50px;
         margin-right: 20px;
@@ -87,7 +87,7 @@ h5 {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 991px) {
     .navbar-toggler {
         border: none;
         outline: none;

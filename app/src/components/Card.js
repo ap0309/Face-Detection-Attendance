@@ -8,8 +8,8 @@ export default function CustomCard(props) {
                 <img src={props.src} className="card-img-top" alt="Card" />
                 <div className="card-body">
                     <h5 className="card-title">{props.title}</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/" className="btn btn-primary">{props.btnctn}</a>
+                    <p className="card-text">{props.text}</p>
+                    <button href="/" className="btn btn-primary" onClick={props.onClick}>{props.btnctn}</button>
                 </div>
             </div>
         </div>

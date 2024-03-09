@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-webcam": "^7.2.0",
+    "webcam-easy": "^1.1.1"
+  }
+}
