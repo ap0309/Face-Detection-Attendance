@@ -1,20 +1,24 @@
 import React from 'react';
 import './Navbar.css';
 
-import logo from '../resources/logo.png';
+import logo from '../resources/logob.png';
 
 export default function Navbar(props) {
     return (
         <>
             <div className="container">
 
-                <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
                     <div className="d-flex align-items-center">
-                        <img src={logo} alt="Logo" className="navbar-logo" />
+                        <img src={logo} alt="Logob" className="navbar-logo" />
+                        <h5 id="title">
+                            <div className="ap1">AP&nbsp;</div>
+                            <div className="and"> &&nbsp; </div>
+                            <div className="ap2">AP&nbsp;</div>
+                            <div className="corporation">Corporation</div>
+                        </h5>
                     </div>
-
-                    <h5 id="titlem"> AP & AP Corporation</h5>
 
                     <button
                         className="navbar-toggler ml-auto btn-light"
@@ -28,8 +32,8 @@ export default function Navbar(props) {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ml-auto">
+                    <div className="links collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul className="navbar-nav">
                             <li className="nav-item active">
                                 <a className="nav-link" href="new_face.html">Home</a>
                             </li>
@@ -40,15 +44,6 @@ export default function Navbar(props) {
                                 <a className="nav-link" href="main.html">Contact Us</a>
                             </li>
                         </ul>
-
-                        <h5 id="title">
-                             <div className="ap1">AP&nbsp;</div> 
-                             <div className="and"> &&nbsp; </div> 
-                             <div className="ap2">AP&nbsp;</div>
-                             <div className="corporation">Corporation</div>
-
-                        </h5>
-
                     </div>
 
                 </nav>
