@@ -1,0 +1,67 @@
+/* loginpage.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0c6dbd;
+  /* Blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif; /* Use Google Font Roboto */
+}
+
+.login-container {
+  background-color: white;
+  /* White form background */
+  padding: 40px; /* Increased padding for bigger card */
+  border-radius: 10px; /* Increased border-radius for smoother edges */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increased box-shadow for more prominent effect */
+  width: 400px; /* Set a fixed width for the card */
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333; /* Dark text color */
+}
+
+.login-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-container button:hover {
+  background-color: #45a049; /* Darker green button on hover */
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container input[type="submit"] {
+  background-color: #4CAF50;
+  /* Green button */
+  color: white;
+  cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #45a049;
+  /* Darker green button on hover */
+}

@@ -1,39 +1,22 @@
-import React, { useState } from 'react';
-import './App.css';
-import Card from './components/Card';
-import Navbar from './components/Navbar';
-import WebcamComponent from './components/WebcamComponent'; // Import the WebcamComponent
-import markp from './resources/markp.jpg';
-import reguser from './resources/reguser.jpg';
-import db from './resources/database.jpg';
+// App.js
+import React from 'react';
+import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/Homepage.js';
+import WebcamComponent from './components/WebcamComponent';
+import LoginPage from './components/Loginpage.js';
+import HomePageAdmin from './components/Homepageadmin.js'; 
 
 function App() {
-  const [showWebcam, setShowWebcam] = useState(false); // State to toggle webcam view
-
-  const handleMarkAttendanceClick = () => {
-    setShowWebcam(true); // Show webcam when "Mark Attendance" is clicked
-  };
-
-  const handleCloseWebcam = () => {
-    setShowWebcam(false); // Close webcam
-  };
-
   return (
-    <>
-      <Navbar />
-      <div className="eventheader row row-cols-1 row-cols-md-3 g-4 justify-content-center align-items-center">
-        <div className="col text-center mb-3 mb-md-0">
-          <Card src={reguser} title="Register New User" btnctn="Click Here" />
-        </div>
-        <div className="col text-center mb-3 mb-md-0">
-          <Card src={markp} title="Mark Attendance" btnctn="Click Here" onClick={handleMarkAttendanceClick} />
-        </div>
-        <div className="col text-center">
-          <Card src={db} title="Access Database" btnctn="Click Here" />
-        </div>
-      </div>
-      {showWebcam && <WebcamComponent onClose={handleCloseWebcam} />}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/admin-home" element={<HomePageAdmin />} /> {/* Use the admin home page component */}
+        <Route path="/mark-attendance" element={<WebcamComponent />} />
+      </Routes>
+    </Router>
   );
 }
 
