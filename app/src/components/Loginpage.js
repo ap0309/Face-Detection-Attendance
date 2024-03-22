@@ -16,8 +16,8 @@ function LoginPage() {
 
     const handleLogin = () => {
         if (isAdmin) {
-            
-            if (id === 'apnap' && password === '0309') { 
+
+            if (id === 'apnap' && password === '0309') {
                 navigate('/admin-home');
             } else {
                 alert('Invalid credentials for admin login');

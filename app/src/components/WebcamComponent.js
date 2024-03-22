@@ -35,7 +35,7 @@ function WebcamComponent() {
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
             const imageData = canvas.toDataURL('image/jpeg');
-
+            console.log(JSON.stringify({ knownImage: imageData }));
             fetch('http://localhost:3000/upload-photo', {
                 method: 'POST',
                 headers: {
