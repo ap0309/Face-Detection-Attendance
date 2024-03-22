@@ -33,7 +33,7 @@ except IndexError:
     print("Error: No face detected in the known image")
     sys.exit(1)
 
-test_images_folder = 'facestorage'
+test_images_folder = 'D:\\Face-Detection-Attendance\\server\\facestorage'
 flag = False
 ename = ''
 

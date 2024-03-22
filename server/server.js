@@ -16,7 +16,7 @@ app.post('/upload-photo', (req, res) => {
 
     const pythonExecutablePath = 'C:\\Users\\ayush\\AppData\\Local\\Programs\\Python\\Python311\\python.exe';
 
-    const pythonProcess = spawn(pythonExecutablePath, ['facerecog.py']);
+    const pythonProcess = spawn(pythonExecutablePath, ['D:\\Face-Detection-Attendance\\server\\facerecog.py']);
 
     pythonProcess.on('error', (err) => {
         console.error('Error spawning Python process:', err);
@@ -25,8 +25,6 @@ app.post('/upload-photo', (req, res) => {
 
     let result = '';
 
-
-   
     const stringifiedData = JSON.stringify(knownImageData);
     pythonProcess.stdin.write(stringifiedData);
     pythonProcess.stdin.end();
