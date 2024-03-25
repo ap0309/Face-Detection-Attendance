@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Card.css';
+import './css/Card.css';
 
 export default function CustomCard(props) {
     return (

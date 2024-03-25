@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './css/loginpage.css'; // Import the CSS file
+import './css/loginpage.css';
 
 function LoginPage() {
     const [id, setId] = useState('');

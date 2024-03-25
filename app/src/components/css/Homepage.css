@@ -1,0 +1,49 @@
+body {
+  /* background-image: url('./resources/mainbg.png'); */
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+  /* overflow: hidden; */
+}
+
+.eventheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-image: url('D:\Face-Detection-Attendance\app\src\resources\cardtoogle.jpg');
+  /* background-image: url('./resources/cardtoogle1.jpg'); */
+
+}
+
+.card {
+  background-image: url('D:\Face-Detection-Attendance\app\src\resources\cardtoogle.jpg');
+  background-image: url('D:\Face-Detection-Attendance\app\src\resources\cardtoogle1.jpg');
+
+}
+
+.eventheader .col {
+  display: flex;
+  justify-content: center;
+}
+
+.eventheader .col:first-child {
+  margin-left: 0;
+}
+
+.eventheader .col:not(:first-child) {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow: visible;
+    overflow-x: hidden;
+  }
+}
