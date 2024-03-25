@@ -3,107 +3,112 @@ import { useNavigate } from 'react-router-dom';
 import './css/loginpage.css'; // Import the CSS file
 
 function LoginPage() {
-    
-    const [isAdmin, setIsAdmin] = useState(false);
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
-    const [securityAnswer, setSecurityAnswer] = useState('');
-    const [showSecurityQuestion, setShowSecurityQuestion] = useState(false);
-    const [showNewPassword, setShowNewPassword] = useState(false);
+    const [showInputBoxes, setShowInputBoxes] = useState(false); // State to manage visibility of input boxes
+    const [showSecurityQuestion, setShowSecurityQuestion] = useState(false); // State to manage visibility of security question
+    const [securityAnswer, setSecurityAnswer] = useState(''); // State to store the security answer
     const navigate = useNavigate();
-    let savedid = 'apnap';
-    let savedpass ='0309';
+    const savedAdminId = 'apnap';
+    const savedAdminPass = '0309';
+    const adminFavoriteNumber = 502; // Admin's favorite number for the security question
 
-    const handleLoginAdmin = () => {
-        setIsAdmin(true);
+    const handleAdminLogin = () => {
+        setShowInputBoxes(true); // Show input boxes when logging in as admin
+    };
+
+    const handleEmployeeLogin = () => {
+        navigate('/home'); // Navigate to /home when logging in as employee
     };
 
     const handleLogin = () => {
-        if (isAdmin) {
-            if (id === savedid && password === savedpass) {
-                navigate('/admin-home');
-            } else {
-                alert('Invalid credentials for admin login');
-            }
+        if (id === savedAdminId && password === savedAdminPass) {
+            navigate('/admin-home');
         } else {
-            navigate('/home');
+            alert('Invalid admin credentials for login');
+        }
+    };
+
+    const handlePasswordKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleLogin(); // Trigger login action when Enter key is pressed
         }
     };
 
     const handleForgotPassword = () => {
-        // Show security question input when clicked on forgot password
-        setShowSecurityQuestion(true);
+        setShowInputBoxes(false); // Hide input boxes
+        setShowSecurityQuestion(true); // Show security question
     };
 
-    const handleSecurityQuestionSubmit = () => {
-        // Check if the security answer matches the expected answer
-        const expectedAnswer = "carrot"; // You can change this to your preferred answer
-        if (securityAnswer.toLowerCase() === expectedAnswer.toLowerCase()) {
-            // Proceed with password reset logic...
-            setShowSecurityQuestion(false); // Hide security question input
-            setShowNewPassword(true); // Show new password input fields
-            setSecurityAnswer(''); // Reset security answer
+    const handleSecurityAnswerSubmit = () => {
+        if (parseInt(securityAnswer) === adminFavoriteNumber) {
+            setShowSecurityQuestion(false); // Hide security question if the answer is correct
+            setShowInputBoxes(true); // Show input boxes for password reset
         } else {
-            // Display error if answer is incorrect
-            alert("Incorrect security answer. Please try again.");
-        }
-    };
-
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmNewPassword, setConfirmNewPassword] = useState('');
-
-    const handlePasswordChange = () => {
-        if (newPassword === confirmNewPassword) {
-            savedpass = newPassword;
-            alert("Password changed successfully.");
-            setShowNewPassword(false); 
-            setId(''); 
-            setPassword(''); 
-            setNewPassword(''); 
-            setConfirmNewPassword('');
-        } else {
-            alert("Passwords do not match.");
+            alert("Incorrect answer. Please try again.");
         }
     };
 
     return (
-        <div className="login-container">
-            <h2>Login</h2>
-            {!isAdmin && (
-                <div>
-                    <button onClick={handleLoginAdmin}>Login as Admin</button>
-                    <button onClick={handleLogin}>Login as Employee</button>
-                </div>
-            )}
-            {isAdmin && (
-                <form className="login-form">
-                    {!showSecurityQuestion ? (
-                        <div>
-                            <input type="text" placeholder="Enter ID" value={id} onChange={(e) => setId(e.target.value)} />
-                            <input type="password" placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            <button onClick={handleLogin}>Login</button>
-                            <div style={{ marginTop: '10px' }}>
-                                {/* Show forgot password link */}
-                                <span onClick={handleForgotPassword} style={{ textDecoration: 'underline', cursor: 'pointer', color: 'blue' }}>Forgot Password?</span>
+        <section>
+            <div className="signin">
+                <div className="content">
+                    <h2>AP & AP Corporation</h2>
+                    <div className="form">
+                        {showInputBoxes ? (
+                            <>
+                                <div className="inputBox">
+                                    <input
+                                        type="text"
+                                        placeholder="Enter ID"
+                                        value={id}
+                                        onChange={(e) => setId(e.target.value)}
+                                    />
+                                    <i>Username</i>
+                                </div>
+                                <div className="inputBox">
+                                    <input
+                                        type="password"
+                                        placeholder="Enter Password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        onKeyPress={handlePasswordKeyPress} // Listen for Enter key press in password field
+                                    />
+                                    <i>Password</i>
+                                </div>
+                                <div className="links">
+                                    <a href="#" onClick={handleForgotPassword}>Forgot Password</a>
+                                </div>
+                                <div className="inputBox">
+                                    <input type="submit" value="Login" onClick={handleLogin} />
+                                </div>
+                            </>
+                        ) : showSecurityQuestion ? (
+                            <>
+                                <div className="securityQuestion">
+                                    <p>What's the admin's favorite number?</p>
+                                    <input
+                                        type="number"
+                                        value={securityAnswer}
+                                        onChange={(e) => setSecurityAnswer(e.target.value)}
+                                    />
+                                    <button onClick={handleSecurityAnswerSubmit}>Submit</button>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="links">
+                                <div className="button-box">
+                                    <button onClick={handleAdminLogin}>Login as Admin</button>
+                                </div>
+                                <div className="button-box">
+                                    <button onClick={handleEmployeeLogin}>Login as Employee</button>
+                                </div>
                             </div>
-                        </div>
-                    ) : (
-                        <div>
-                            <h3>Security Question</h3>
-                            <input type="text" placeholder="What's your favorite vegetable?" value={securityAnswer} onChange={(e) => setSecurityAnswer(e.target.value)} />
-                            <button onClick={handleSecurityQuestionSubmit}>Submit</button>
-                        </div>
-                    )}
-                    {showNewPassword && (
-                        <div>
-                            <input type="password" placeholder="New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
-                            <input type="password" placeholder="Confirm New Password" value={confirmNewPassword} onChange={(e) => setConfirmNewPassword(e.target.value)} />
-                            <button onClick={handlePasswordChange}>Change Password</button>
-                        </div>
-                    )}
-                </form>
-            )}
-        </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 }
 

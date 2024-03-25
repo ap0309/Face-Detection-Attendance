@@ -10,15 +10,17 @@ import Reguser from './components/reguserpg.js'
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path = "/reguser" element={<Reguser/>}></Route>
-        <Route path="/admin-home" element={<HomePageAdmin />} />
-        <Route path="/mark-attendance" element={<WebcamComponent />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/reguser" element={<Reguser />}></Route>
+          <Route path="/admin-home" element={<HomePageAdmin />} />
+          <Route path="/mark-attendance" element={<WebcamComponent />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
