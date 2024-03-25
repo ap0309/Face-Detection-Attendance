@@ -3,14 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import './css/loginpage.css'; // Import the CSS file
 
 function LoginPage() {
+    
     const [isAdmin, setIsAdmin] = useState(false);
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [securityAnswer, setSecurityAnswer] = useState('');
     const [showSecurityQuestion, setShowSecurityQuestion] = useState(false);
+    const [showNewPassword, setShowNewPassword] = useState(false);
     const navigate = useNavigate();
-    const savedid = 'apnap' ;
-    const savedpass ='0309';
+    let savedid = 'apnap';
+    let savedpass ='0309';
+
     const handleLoginAdmin = () => {
         setIsAdmin(true);
     };
@@ -37,10 +40,29 @@ function LoginPage() {
         const expectedAnswer = "carrot"; // You can change this to your preferred answer
         if (securityAnswer.toLowerCase() === expectedAnswer.toLowerCase()) {
             // Proceed with password reset logic...
-            alert("Password reset allowed."); // Replace with actual password reset logic
+            setShowSecurityQuestion(false); // Hide security question input
+            setShowNewPassword(true); // Show new password input fields
+            setSecurityAnswer(''); // Reset security answer
         } else {
             // Display error if answer is incorrect
             alert("Incorrect security answer. Please try again.");
+        }
+    };
+
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmNewPassword, setConfirmNewPassword] = useState('');
+
+    const handlePasswordChange = () => {
+        if (newPassword === confirmNewPassword) {
+            savedpass = newPassword;
+            alert("Password changed successfully.");
+            setShowNewPassword(false); 
+            setId(''); 
+            setPassword(''); 
+            setNewPassword(''); 
+            setConfirmNewPassword('');
+        } else {
+            alert("Passwords do not match.");
         }
     };
 
@@ -70,6 +92,13 @@ function LoginPage() {
                             <h3>Security Question</h3>
                             <input type="text" placeholder="What's your favorite vegetable?" value={securityAnswer} onChange={(e) => setSecurityAnswer(e.target.value)} />
                             <button onClick={handleSecurityQuestionSubmit}>Submit</button>
+                        </div>
+                    )}
+                    {showNewPassword && (
+                        <div>
+                            <input type="password" placeholder="New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
+                            <input type="password" placeholder="Confirm New Password" value={confirmNewPassword} onChange={(e) => setConfirmNewPassword(e.target.value)} />
+                            <button onClick={handlePasswordChange}>Change Password</button>
                         </div>
                     )}
                 </form>
