@@ -1,6 +1,5 @@
 import React from 'react';
 import './css/Navbar.css';
-
 import logo from '../resources/logob.png';
 
 export default function Navbar(props) {
@@ -8,7 +7,7 @@ export default function Navbar(props) {
         <>
             <div className="container">
 
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top"> {/* Added 'fixed-top' class here */}
 
                     <div className="d-flex align-items-center">
                         <img src={logo} alt="Logob" className="navbar-logo" />

@@ -36,7 +36,7 @@ function WebcamComponent() {
 
             const imageData = canvas.toDataURL('image/jpeg');
             console.log(JSON.stringify({ knownImage: imageData }));
-            fetch('http://localhost:3000/upload-photo', {
+            fetch( props.apiendpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

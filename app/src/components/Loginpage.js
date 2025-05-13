@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './css/loginpage.css';
+import styles from './css/loginpage.module.css';
 
 function LoginPage() {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
-    const [showInputBoxes, setShowInputBoxes] = useState(false); // State to manage visibility of input boxes
-    const [showSecurityQuestion, setShowSecurityQuestion] = useState(false); // State to manage visibility of security question
-    const [securityAnswer, setSecurityAnswer] = useState(''); // State to store the security answer
-    const [newPassword, setNewPassword] = useState(''); // State to store the new password
-    const [confirmPassword, setConfirmPassword] = useState(''); // State to store the confirm password
-    const [savedPassword, setSavedPassword] = useState('0309'); // Initial saved password
-    const [showResetPassword, setShowResetPassword] = useState(false); // State to manage visibility of reset password fields
+    const [showInputBoxes, setShowInputBoxes] = useState(false);
+    const [showSecurityQuestion, setShowSecurityQuestion] = useState(false);
+    const [securityAnswer, setSecurityAnswer] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [savedPassword, setSavedPassword] = useState('0309');
+    const [showResetPassword, setShowResetPassword] = useState(false);
     const navigate = useNavigate();
     const savedAdminId = 'apnap';
-    const adminFavoriteNumber = 502; // Admin's favorite number for the security question
+    const adminFavoriteNumber = 502;
 
     const handleAdminLogin = () => {
-        setShowInputBoxes(true); // Show input boxes when logging in as admin
+        setShowInputBoxes(true);
     };
 
     const handleEmployeeLogin = () => {
-        navigate('/home'); // Navigate to /home when logging in as employee
+        navigate('/home');
     };
 
     const handleLogin = () => {
@@ -34,22 +34,22 @@ function LoginPage() {
 
     const handlePasswordKeyPress = (e) => {
         if (e.key === 'Enter') {
-            handleLogin(); // Trigger login action when Enter key is pressed
+            handleLogin();
         }
     };
 
     const handleForgotPassword = () => {
-        setShowInputBoxes(false); // Hide input boxes
-        setShowSecurityQuestion(true); // Show security question
+        setShowInputBoxes(false);
+        setShowSecurityQuestion(true);
     };
 
     const handleSecurityAnswerSubmit = () => {
         if (parseInt(securityAnswer) === adminFavoriteNumber) {
-            setShowSecurityQuestion(false); // Hide security question if the answer is correct
-            setShowInputBoxes(false); // Hide input boxes
-            setNewPassword(''); // Clear new password field
-            setConfirmPassword(''); // Clear confirm password field
-            setShowResetPassword(true); // Show reset password fields
+            setShowSecurityQuestion(false);
+            setShowInputBoxes(false);
+            setNewPassword('');
+            setConfirmPassword('');
+            setShowResetPassword(true);
         } else {
             alert("Incorrect answer. Please try again.");
         }
@@ -57,9 +57,9 @@ function LoginPage() {
 
     const handleResetPassword = () => {
         if (newPassword === confirmPassword) {
-            setSavedPassword(newPassword); // Change the saved password
-            setShowResetPassword(false); // Hide reset password fields
-            setShowInputBoxes(true); // Show input boxes
+            setSavedPassword(newPassword);
+            setShowResetPassword(false);
+            setShowInputBoxes(true);
             alert('Password changed successfully!');
         } else {
             alert('Passwords do not match. Please try again.');
@@ -68,13 +68,13 @@ function LoginPage() {
 
     return (
         <section>
-            <div className="signin">
-                <div className="content">
+            <div className={styles.signin}>
+                <div className={styles.content}>
                     <h2>AP & AP Corporation</h2>
-                    <div className="form">
+                    <div className={styles.form}>
                         {showInputBoxes ? (
                             <>
-                                <div className="inputBox">
+                                <div className={styles.inputBox}>
                                     <input
                                         type="text"
                                         placeholder="Enter ID"
@@ -83,26 +83,26 @@ function LoginPage() {
                                     />
                                     <i>Username</i>
                                 </div>
-                                <div className="inputBox">
+                                <div className={styles.inputBox}>
                                     <input
                                         type="password"
                                         placeholder="Enter Password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        onKeyPress={handlePasswordKeyPress} // Listen for Enter key press in password field
+                                        onKeyPress={handlePasswordKeyPress}
                                     />
                                     <i>Password</i>
                                 </div>
-                                <div className="links">
+                                <div className={styles.links}>
                                     <a href="#" onClick={handleForgotPassword}>Forgot Password</a>
                                 </div>
-                                <div className="inputBox">
+                                <div className={styles.inputBox}>
                                     <input type="submit" value="Login" onClick={handleLogin} />
                                 </div>
                             </>
                         ) : showSecurityQuestion ? (
                             <>
-                                <div className="inputBox">
+                                <div className={styles.inputBox}>
                                     <p>What is admin's favorite number?</p>
                                     <input
                                         type="number"
@@ -111,8 +111,8 @@ function LoginPage() {
                                     />
                                     <i>Favourite Number</i>
                                     <hr></hr>
-                                    <div className="links">
-                                        <div className="button-box">
+                                    <div className={styles.links}>
+                                        <div className={styles.buttonBox}>
                                             <button onClick={handleSecurityAnswerSubmit}>Submit</button>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@ function LoginPage() {
                             </>
                         ) : showResetPassword ? (
                             <>
-                                <div className="inputBox">
+                                <div className={styles.inputBox}>
                                     <input
                                         type="password"
                                         placeholder="Enter New Password"
@@ -128,7 +128,7 @@ function LoginPage() {
                                         onChange={(e) => setNewPassword(e.target.value)} />
                                     <i>New Password</i>
                                 </div>
-                                <div className="inputBox">
+                                <div className={styles.inputBox}>
                                     <input
                                         type="password"
                                         placeholder="Confirm Password"
@@ -137,16 +137,16 @@ function LoginPage() {
                                     />
                                     <i>Confirm Password</i>
                                 </div>
-                                <div className="inputBox">
+                                <div className={styles.inputBox}>
                                     <input type="submit" value="Reset Password" onClick={handleResetPassword} />
                                 </div>
                             </>
                         ) : (
-                            <div className="links">
-                                <div className="button-box">
+                            <div className={styles.links}>
+                                <div className={styles.buttonBox}>
                                     <button onClick={handleAdminLogin}>Login as Admin</button>
                                 </div>
-                                <div className="button-box">
+                                <div className={styles.buttonBox}>
                                     <button onClick={handleEmployeeLogin}>Login as Employee</button>
                                 </div>
                             </div>
@@ -154,11 +154,10 @@ function LoginPage() {
                     </div>
                 </div>
             </div>
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </section>
     );
 }
 
 export default LoginPage;
-
-
