@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Webcam from 'webcam-easy';
 
-function WebcamComponent({ apiendpoint, onCapture }) {
+function WebcamComponent() {
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const webcamRef = useRef(null);
@@ -35,13 +35,8 @@ function WebcamComponent({ apiendpoint, onCapture }) {
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
             const imageData = canvas.toDataURL('image/jpeg');
-
-            // Optional: send image to parent
-            if (onCapture) {
-                onCapture(imageData);
-            }
-
-            fetch(apiendpoint, {
+            console.log(JSON.stringify({ knownImage: imageData }));
+            fetch( props.apiendpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -51,12 +46,16 @@ function WebcamComponent({ apiendpoint, onCapture }) {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Response from server:', data);
+                    // Handle response as needed
                 })
                 .catch(error => {
                     console.error('Error sending photo to server:', error);
+                    // Handle error as needed
                 })
                 .finally(() => {
-                    video.play();
+                    if (video) {
+                        video.play(); // Resume video playback after capturing photo
+                    }
                 });
         }
     };
@@ -65,6 +64,7 @@ function WebcamComponent({ apiendpoint, onCapture }) {
         if (webcamRef.current) {
             webcamRef.current.stop();
         }
+        // Add your close functionality here, for example:
         console.log('Closing webcam');
     };
 
@@ -72,7 +72,7 @@ function WebcamComponent({ apiendpoint, onCapture }) {
         <div className="webcam-overlay">
             <div className="webcam-container">
                 <button className="close-button" onClick={handleClose}>Close Webcam</button>
-                <video ref={videoRef} autoPlay playsInline />
+                <video ref={videoRef} />
                 <canvas ref={canvasRef} style={{ display: 'none' }} />
                 <button onClick={capturePhoto}>Capture Photo</button>
             </div>
