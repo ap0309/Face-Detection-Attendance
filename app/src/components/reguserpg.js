@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WebcamComponent from './WebcamComponent';
 
+
 const UserRegistrationWithWebcam = () => {
   const [formData, setFormData] = useState({
     eid: '',
@@ -86,6 +87,7 @@ const UserRegistrationWithWebcam = () => {
       .catch((error) => {
         console.error('Error sending photo to server:', error);
       });
+
   };
 
   return (
@@ -107,16 +109,19 @@ const UserRegistrationWithWebcam = () => {
                 required
               />
             </div>
+
             {/* Additional Form Fields */}
             <WebcamComponent
               apiendpoint="http://localhost:3000/upload-photo"
               onPhotoCapture={handlePhotoCapture}
             />
+
             <button type="submit" className="btn btn-primary">Update Employee</button>
           </form>
         </div>
       </div>
     </div>
+
   );
 };
 

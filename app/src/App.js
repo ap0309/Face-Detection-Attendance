@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/Homepage.js';
 import WebcamComponent from './components/WebcamComponent';
 import LoginPage from './components/Loginpage.js';
+
 import HomePageAdmin from './components/Homepageadmin.js';
 import Reguser from './components/reguserpg.js'
 //okk
