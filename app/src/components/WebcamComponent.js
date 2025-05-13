@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Webcam from 'webcam-easy';
 
-function WebcamComponent() {
+function WebcamComponent({ apiendpoint, onCapture }) {
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const webcamRef = useRef(null);
@@ -17,7 +17,7 @@ function WebcamComponent() {
 
     const accessWebcam = () => {
         const webcam = new Webcam(videoRef.current, 'user', canvasRef.current);
-        webcamRef.current = webcam; // Save the Webcam instance reference
+        webcamRef.current = webcam;
         webcam.start()
             .then(() => console.log('Webcam started'))
             .catch(error => console.error('Error starting webcam:', error));
@@ -35,8 +35,13 @@ function WebcamComponent() {
             context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
             const imageData = canvas.toDataURL('image/jpeg');
-            console.log(JSON.stringify({ knownImage: imageData }));
-            fetch( props.apiendpoint, {
+
+            // Optional: send image to parent
+            if (onCapture) {
+                onCapture(imageData);
+            }
+
+            fetch(apiendpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -46,16 +51,12 @@ function WebcamComponent() {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Response from server:', data);
-                    // Handle response as needed
                 })
                 .catch(error => {
                     console.error('Error sending photo to server:', error);
-                    // Handle error as needed
                 })
                 .finally(() => {
-                    if (video) {
-                        video.play(); // Resume video playback after capturing photo
-                    }
+                    video.play();
                 });
         }
     };
@@ -64,7 +65,6 @@ function WebcamComponent() {
         if (webcamRef.current) {
             webcamRef.current.stop();
         }
-        // Add your close functionality here, for example:
         console.log('Closing webcam');
     };
 
@@ -72,7 +72,7 @@ function WebcamComponent() {
         <div className="webcam-overlay">
             <div className="webcam-container">
                 <button className="close-button" onClick={handleClose}>Close Webcam</button>
-                <video ref={videoRef} />
+                <video ref={videoRef} autoPlay playsInline />
                 <canvas ref={canvasRef} style={{ display: 'none' }} />
                 <button onClick={capturePhoto}>Capture Photo</button>
             </div>
