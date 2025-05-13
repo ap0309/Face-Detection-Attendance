@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.0",
+    "i": "^0.3.7",
+    "react-webcam": "^7.2.0",
+    "webcam-easy": "^1.1.1"
+  }
+}
