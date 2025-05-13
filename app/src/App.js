@@ -7,11 +7,13 @@ import WebcamComponent from './components/WebcamComponent';
 import LoginPage from './components/loginpage.js';
 import HomePageAdmin from './components/Homepageadmin.js';
 import Reguser from './components/reguserpg.js'
+//okk
 
 function App() {
   return (
     <>
       <Router>
+
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
