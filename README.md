@@ -102,10 +102,9 @@ A comprehensive, full-stack attendance management system leveraging face detecti
 
 ## 🧩 Tech Stack
 
-- **Frontend:** ReactJS, Redux, Material-UI/Bootstrap
+- **Frontend:** ReactJS, Material-UI/Bootstrap
 - **Backend:** Python (face_recognition, OpenCV), ExpressJS (Node.js)
-- **Database:** MongoDB / MySQL / PostgreSQL (configurable)
-- **Deployment:** Docker, docker-compose
+- **Database:** MongoDB / MySQL 
 
 ---
 
@@ -116,9 +115,7 @@ A comprehensive, full-stack attendance management system leveraging face detecti
 - Report bugs or request features via GitHub Issues
 
 ---
+## Contributors
+- Anmol Panjwani (self)
+- Ayush Patel
 
-## 🙌 Acknowledgements
-
-- [face_recognition](https://github.com/ageitgey/face_recognition) library
-- OpenCV
-- ReactJS & ExpressJS communities
